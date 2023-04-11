@@ -33,7 +33,7 @@ function ProductList() {
   }, []);
 
   return (
-    <div className="gap-20 flex flex-col my-20">
+    <div className="gap-20 flex flex-col my-5 lg:my-10 xl:my-15">
       {/* EVA Case */}
       <div>
         <h2 className="mx-2 text-2xl font-semibold">EVA Racquet Case</h2>
@@ -66,7 +66,7 @@ function ProductList() {
 
       {/* Aluminium Case */}
       <div>
-        <h2 className="mx-2 text-2xl font-semibold">Aluminium Racquet Case</h2>
+        <h2 className="mx-2 text-2xl font-semibold my-5">Aluminium Racquet Case</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2 gap-2 md:gap-3">
           {alu &&
             alu.map((doc) => (
