@@ -11,12 +11,10 @@ function Slider() {
   useEffect(() => {
     const colRef = collection(database, "slider");
     getDocs(colRef).then((snapshot) => {
-      console.log(snapshot.docs);
       let slider = [];
       snapshot.docs.forEach((doc) => {
         slider.push({ ...doc.data(), id: doc.id });
       });
-      console.log(slider[0].imgs);
       setSlider(slider);
     });
   }, []);
