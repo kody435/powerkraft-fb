@@ -12,7 +12,7 @@ function ProductList() {
 
   useEffect(() => {
     const colRef1 = collection(database, "products");
-    const q1 = query(colRef1, where("cat", "==", "eva"));
+    const q1 = query(colRef1, where("cat", "==", "eva"), limit(4));
     getDocs(q1).then((snapshot) => {
       let products = [];
       snapshot.docs.forEach((doc) => {
@@ -36,7 +36,12 @@ function ProductList() {
     <div className="gap-16 flex flex-col my-5 lg:my-10 xl:my-15">
       {/* EVA Case */}
       <div>
-        <h2 className="mx-2 text-xl lg:text-2xl font-medium">EVA Case</h2>
+        <div className="mx-2 flex flex-row items-center justify-between ">
+          <h2 className="text-xl lg:text-2xl font-medium ">EVA Case</h2>
+          <p className="text-md md:text-lg mx-0 md:mx-5 lg:mx-10 ">
+            Shop Eva Case →
+          </p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {eva &&
             eva.map((doc) => (
@@ -66,7 +71,12 @@ function ProductList() {
 
       {/* Aluminium Case */}
       <div>
-        <h2 className="mx-2 text-xl lg:text-2xl font-medium mb-5">ALUMINIUM Case</h2>
+        <div className="mx-2 flex flex-row items-center justify-between ">
+          <h2 className="text-xl lg:text-2xl font-medium ">ALUMINIUM Case</h2>
+          <p className="text-md md:text-lg mx-0 md:mx-5 lg:mx-10 ">
+            Shop Eva Case →
+          </p>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {alu &&
             alu.map((doc) => (
