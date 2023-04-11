@@ -33,7 +33,7 @@ function ProductList() {
   }, []);
 
   return (
-    <div className="gap-20 flex flex-col">
+    <div className="gap-20 flex flex-col my-20">
       {/* EVA Case */}
       <div>
         <h2 className="mx-2 text-2xl font-semibold">EVA Racquet Case</h2>
