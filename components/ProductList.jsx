@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where, limit } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { database } from "../firebaseConfig";
 
@@ -22,7 +22,7 @@ function ProductList() {
     });
 
     const colRef2 = collection(database, "products");
-    const q2 = query(colRef2, where("cat", "==", "alu"));
+    const q2 = query(colRef2, where("cat", "==", "alu"), limit(4));
     getDocs(q2).then((snapshot) => {
       let products = [];
       snapshot.docs.forEach((doc) => {
@@ -33,11 +33,11 @@ function ProductList() {
   }, []);
 
   return (
-    <div className="gap-20 flex flex-col my-5 lg:my-10 xl:my-15">
+    <div className="gap-16 flex flex-col my-5 lg:my-10 xl:my-15">
       {/* EVA Case */}
       <div>
         <h2 className="mx-2 text-xl lg:text-2xl font-medium">EVA Case</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {eva &&
             eva.map((doc) => (
               <Link
@@ -66,8 +66,8 @@ function ProductList() {
 
       {/* Aluminium Case */}
       <div>
-        <h2 className="mx-2 text-xl lg:text-2xl font-medium my-5">ALUMINIUM Case</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2 gap-2 md:gap-3">
+        <h2 className="mx-2 text-xl lg:text-2xl font-medium mb-5">ALUMINIUM Case</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {alu &&
             alu.map((doc) => (
               <Link
