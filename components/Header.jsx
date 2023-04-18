@@ -20,7 +20,7 @@ export default function Example() {
               className="h-16 w-auto "
               width={1000}
               height={300}
-              src="https://firebasestorage.googleapis.com/v0/b/powerkraft-02.appspot.com/o/Logo.webp?alt=media&token=e8c4ab3d-02f6-4c1e-927b-446b41b0d8f3"
+              src="https://firebasestorage.googleapis.com/v0/b/powerkraft-02.appspot.com/o/other%20images%2FLogo.webp?alt=media&token=faab2682-7787-465a-9a5f-82ec66ace27b"
               alt=""
             />
           </Link>
@@ -66,7 +66,7 @@ export default function Example() {
                 className="h-16 w-auto"
                 width={1000}
                 height={300}
-                src="https://cdn.sanity.io/images/wub429kh/production/934622ff85d41ea14026c4d4ebabced19a3e656a-5196x1651.png"
+                src="https://firebasestorage.googleapis.com/v0/b/powerkraft-02.appspot.com/o/other%20images%2FLogo.webp?alt=media&token=faab2682-7787-465a-9a5f-82ec66ace27bg"
                 alt=""
               />
             </a>
