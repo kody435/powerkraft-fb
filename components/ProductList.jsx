@@ -44,9 +44,9 @@ function ProductList() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {eva &&
-            eva.map((doc) => (
+            eva.map((doc, key) => (
               <div
-                key=""
+                key={key}
                 href={`/products/${doc.slug}`}
                 className="shadow-lg ease-in-out delay-150 duration-300 hover:-translate-1 translate hover:scale-105 flex flex-col"
               >
@@ -73,15 +73,18 @@ function ProductList() {
       <div>
         <div className="mx-2 flex flex-row items-center justify-between ">
           <h2 className="text-xl lg:text-2xl font-medium ">ALUMINIUM Case</h2>
-          <p className="text-md md:text-lg mx-0 md:mx-5 lg:mx-10 ">
-            Shop Eva Case →
-          </p>
+          <Link
+            href="/categories#alu"
+            className="text-md md:text-lg mx-0 md:mx-5 lg:mx-10 "
+          >
+            Shop Aluminium Case →
+          </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 m-2 gap-2 md:gap-3">
           {alu &&
-            alu.map((doc) => (
-              <Link
-                key=""
+            alu.map((doc, key) => (
+              <div
+                key={key}
                 href={`/products/${doc.slug}`}
                 className="shadow-lg ease-in-out delay-150 duration-300 hover:-translate-1 translate hover:scale-105 flex flex-col"
               >
@@ -99,7 +102,7 @@ function ProductList() {
                     {doc.title}
                   </h3>
                 </div>
-              </Link>
+              </div>
             ))}
         </div>
       </div>
